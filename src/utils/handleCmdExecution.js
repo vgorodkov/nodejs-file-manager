@@ -10,6 +10,7 @@ import {
 } from './file_operations/index.js';
 import { getSystemInfo } from './os_info/index.js';
 import { calculateHash } from './hash_calc/index.js';
+import { compressFile, decompressFile } from './zip/index.js';
 
 export async function handleCmdExecution(cmd, args) {
   switch (cmd) {
@@ -45,6 +46,13 @@ export async function handleCmdExecution(cmd, args) {
       break;
     case 'hash':
       await calculateHash(...args);
+      break;
+    case 'compress':
+      await compressFile(args);
+      break;
+    case 'decompress':
+      await decompressFile(args);
+      break;
     default:
       break;
   }

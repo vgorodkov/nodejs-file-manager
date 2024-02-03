@@ -12,6 +12,8 @@ export function validateInput(cmd, args) {
     mv: 2,
     os: 1,
     hash: 1,
+    compress: 2,
+    decompress: 2,
   };
 
   return args.length === allowedCmds[cmd] || false;
