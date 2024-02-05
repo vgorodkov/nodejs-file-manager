@@ -1,24 +1,24 @@
-import { homedir } from 'os';
-import { strings } from '../../constants/strings.js';
-import { readdir, stat } from 'fs/promises';
+import { homedir } from "os";
+import { strings } from "../../constants/strings.js";
+import { access, constants, readdir, stat } from "fs/promises";
+import {
+  handleInvalidInputMsg,
+  handleOperationFailedMsg,
+} from "../messages/index.js";
 
 export function setStaringWorkingDir() {
   process.chdir(homedir());
 }
 
 export function moveUpDir() {
-  process.chdir('..');
+  process.chdir("..");
 }
 
-export function moveToDir(path) {
+export async function moveToDir(path) {
   try {
     process.chdir(path);
   } catch (err) {
-    if ((err.code = 'ENOENT')) {
-      console.log(strings.invalidInput);
-    } else {
-      console.error(strings.executionError);
-    }
+    handleOperationFailedMsg();
   }
 }
 
@@ -28,7 +28,7 @@ export async function showFileList() {
     const formattedFiles = files.map(async (file) => {
       const fileStats = await stat(file);
       const isFile = fileStats.isFile();
-      const fileType = isFile ? 'file' : 'directory';
+      const fileType = isFile ? "file" : "directory";
       return {
         Name: file,
         Type: fileType,
@@ -40,6 +40,6 @@ export async function showFileList() {
     });
     console.table(listOfFiles);
   } catch {
-    console.error(strings.executionError);
+    handleOperationFailedMsg();
   }
 }
