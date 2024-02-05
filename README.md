@@ -10,7 +10,8 @@ Before using the application, make sure to read this:
 
 - To start the project, use: `npm run start -- --username=your_username`. Replace `your_username` with yours.
 - To exit the application, use `ctrl+c` or send the `.exit` command.
-- **Wrap paths with quotes for directories with white spaces.**
+- **Wrap paths with quotes for directories or files with white spaces.**
+- You might need to run code as Administrator so that you can use file-manager in the root of the disk. For example, using add, rm, mv, etc. in C:\. 
 
 ## Available Commands
 
