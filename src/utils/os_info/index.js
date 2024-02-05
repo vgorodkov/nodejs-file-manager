@@ -1,6 +1,6 @@
-import { EOL, arch, cpus, homedir, userInfo } from 'os';
+import { EOL, arch, cpus, homedir, userInfo } from "os";
 
-import { handleInvalidInputMsg } from '../messages/index.js';
+import { handleInvalidInputMsg } from "../messages/index.js";
 
 function getEOL() {
   console.log(JSON.stringify(EOL));
@@ -9,8 +9,8 @@ function getEOL() {
 function getCPUs() {
   const [{ model }] = cpus();
   const totalAmount = cpus().length;
-  //divide by 1000 turn MHz to GHz
-  const clockRates = cpus().map((cpu) => cpu.speed / 1000 + ' GHz');
+  //divide by 1000 to turn MHz to GHz
+  const clockRates = cpus().map((cpu) => cpu.speed / 1000 + " GHz");
   const output = {
     model: model.trim(),
     totalAmount,
@@ -34,19 +34,19 @@ function getCPUArchitecture() {
 
 export function getSystemInfo(arg) {
   switch (arg) {
-    case '--EOL':
+    case "--EOL":
       getEOL();
       break;
-    case '--cpus':
+    case "--cpus":
       getCPUs();
       break;
-    case '--homedir':
+    case "--homedir":
       getHomeDir();
       break;
-    case '--username':
+    case "--username":
       getSystemUsername();
       break;
-    case '--architecture':
+    case "--architecture":
       getCPUArchitecture();
       break;
     default:

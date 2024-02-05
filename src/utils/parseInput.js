@@ -1,4 +1,6 @@
 export function parseInput(input) {
+  //regex pattern to match both argumets as strings or 'string string'|"string string" to handle complex paths with whitespaces
+
   const regex = /"([^"]+)"|'([^']+)'\s*|\S+/g;
   const parts = [];
   let match;
