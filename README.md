@@ -8,7 +8,7 @@ This FileManager CLI application is built using 20.11.0 version of Node.js.
 
 Before using the application, make sure to read this:
 
-- To start the project, use: `npm run start -- --username=your_username`. Replace `your_username` with yours.
+- To start the project, use: `npm run start -- --username=your_username`. Replace `your_username` with yours. If the nickname isn't provided, default nickname "User" is set.
 - To exit the application, use `ctrl+c` or send the `.exit` command.
 - **Wrap paths with quotes for directories with white spaces.**
 
