@@ -11,6 +11,7 @@ Before using the application, make sure to read this:
 - To start the project, use: `npm run start -- --username=your_username`. Replace `your_username` with yours. If the nickname isn't provided, default nickname "User" is set.
 - To exit the application, use `ctrl+c` or send the `.exit` command.
 - **Wrap paths with quotes for directories and files with white spaces.**
+- **Compress / decompress path_to_file path_to_directory (where the compressed / decompressed file will be stored)**
 - You might need to run code as Administrator so that you can use file-manager in the root of the disk. For example, using add, rm, mv, etc. in C:\\ .
 
 ## Available Commands
